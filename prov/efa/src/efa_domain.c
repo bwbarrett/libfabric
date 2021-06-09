@@ -264,7 +264,7 @@ void efa_atfork_callback()
 static int efa_mr_cache_init(struct efa_domain *domain, struct fi_info *info)
 {
 	struct ofi_mem_monitor *memory_monitors[OFI_HMEM_MAX] = {
-		[FI_HMEM_SYSTEM] = uffd_monitor,
+		[FI_HMEM_SYSTEM] = memhooks_monitor,
 		[FI_HMEM_CUDA] = cuda_monitor,
 	};
 	int ret;
